@@ -12,49 +12,49 @@ const jewelryItems = [
   },
   {
     id: 2,
-    name: "Diamond Ring",
+    name: "Gold Chain",
     price: 250,
     image: "/assets/longchain.png",
   },
   {
     id: 3,
-    name: "Silver Bracelet",
+    name: "Diamond Ring",
     price: 90,
     image: "/assets/gold12.png",
   },
   {
     id: 4,
-    name: "Silver Piece",
+    name: "Gold Piece",
     price: 110,
     image: "/assets/goldpeace.png",
   },
   {
     id: 5,
-    name: "Gold Necklace",
+    name: "Silver Necklace",
     price: 120,
     image: "/assets/gold21.png",
   },
   {
     id: 6,
-    name: "Diamond Ring",
+    name: "Gold Ring",
     price: 250,
     image: "/assets/gold11.png",
   },
   {
     id: 7,
-    name: "Silver Bracelet",
+    name: "Gold Earring",
     price: 90,
     image: "/assets/gold22.png",
   },
   {
     id: 8,
-    name: "Silver Piece",
+    name: "Gold Peace",
     price: 110,
     image: "/assets/goldpeace1.png",
   },
 ];
 
-const whatsappNumber = "905338540555"; // ← change to your WhatsApp number, no + or spaces
+const whatsappNumber = "905338540555";
 
 const ShopPage = () => {
   return (
@@ -73,20 +73,19 @@ const ShopPage = () => {
           const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
           return (
-            <div
-              key={item.id}
-              className="group flex flex-col items-left text-left"
-            >
-              {/* Image */}
-              <div className="w-full aspect-square bg-[var(--color-off-white)] overflow-hidden">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  width={300}
-                  height={300}
-                  className="w-full h-full object-contain p-4"
-                />
-              </div>
+            <div key={item.id} className="group flex flex-col text-left">
+              {/* Wrap image in next/link */}
+              <Link href={`/product/${item.id}`} className="w-full">
+                <div className="w-full aspect-square bg-[var(--color-off-white)] overflow-hidden cursor-pointer">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    width={300}
+                    height={300}
+                    className="w-full h-full object-contain p-4"
+                  />
+                </div>
+              </Link>
 
               {/* Name + Price */}
               <div className="mt-4 space-y-1">
