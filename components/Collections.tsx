@@ -17,7 +17,7 @@ const Collections = () => {
     <section className="relative px-6 sm:px-10 lg:px-[140px] bg-[var(--color-off-white)] py-16 sm:py-24 lg:py-32 overflow-hidden">
       {/* Transparent vector background */}
       <img
-        src="/assets/collectionbg.png"
+        src={"/assets/collectionbg.png"}
         alt="Vector background"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
       />
@@ -40,12 +40,12 @@ const Collections = () => {
             className="overflow-hidden transform-gpu z-10 hover:scale-105 transition-transform duration-500"
           >
             <Image
-              src="/assets/collectionbg.png"
-              alt="Vector background"
-              fill
-              priority
-              className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
-            />
+        src={src}
+        alt={`Collection ${index + 1}`}
+        width={400}
+        height={400}
+        className="w-full h-[400px] object-cover rounded-xl"
+      />
           </div>
         ))}
       </div>
