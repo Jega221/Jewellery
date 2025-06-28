@@ -1,4 +1,3 @@
-// File: app/shop/page.tsx
 "use client";
 
 import Image from "next/image";
@@ -55,6 +54,8 @@ const jewelryItems = [
   },
 ];
 
+const whatsappNumber = "905338540555"; // ← change to your WhatsApp number, no + or spaces
+
 const ShopPage = () => {
   return (
     <main className="min-h-screen px-6 sm:px-10 lg:px-[140px] py-32 bg-[var(--color-white)] text-[var(--color-black)]">
@@ -66,41 +67,56 @@ const ShopPage = () => {
       </h1>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4 md:gap-2">
-        {jewelryItems.map((item) => (
-          <Link
-            href={`/product/${item.id}`}
-            key={item.id}
-            className="group flex flex-col items-left text-left"
-          >
-            {/* Image */}
-            <div className="w-full aspect-square bg-[var(--color-off-white)] overflow-hidden">
-              <Image
-                src={item.image}
-                alt={item.name}
-                width={300}
-                height={300}
-                className="w-full h-full object-contain p-4"
-              />
-            </div>
+        {jewelryItems.map((item) => {
+          const whatsappMessage = `Hello, I'm interested in the ${item.name} priced at $${item.price}. Can you tell me more?`;
+          const encodedMessage = encodeURIComponent(whatsappMessage);
+          const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
-            {/* Name and Price */}
-            <div className="mt-4">
+          return (
+            <div
+              key={item.id}
+              className="group flex flex-col items-left text-left"
+            >
+              {/* Image */}
+              <div className="w-full aspect-square bg-[var(--color-off-white)] overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  width={300}
+                  height={300}
+                  className="w-full h-full object-contain p-4"
+                />
+              </div>
+
+              {/* Name + Price */}
+              <div className="mt-4 space-y-1">
                 <h3
-                    className="text-lg font-semibold"
-                    style={{ fontFamily: "var(--font-heading)" }}
+                  className="text-lg font-semibold"
+                  style={{ fontFamily: "var(--font-heading)" }}
                 >
-                    {item.name}
+                  {item.name}
                 </h3>
                 <p
-                    className="text-base text-[var(--color-brown)]"
-                    style={{ fontFamily: "var(--font-subtext)" }}
+                  className="text-base text-[var(--color-brown)]"
+                  style={{ fontFamily: "var(--font-subtext)" }}
                 >
-                    ${item.price}
+                  ${item.price}
                 </p>
-                </div>
+              </div>
 
-          </Link>
-        ))}
+              {/* WhatsApp Button */}
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-2 bg-[var(--color-brown)] text-white px-4 py-2 rounded-md text-sm hover:bg-opacity-90 transition"
+                style={{ fontFamily: "var(--font-subtext)" }}
+              >
+                Buy on WhatsApp
+              </a>
+            </div>
+          );
+        })}
       </div>
     </main>
   );
