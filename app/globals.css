@@ -2,25 +2,40 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
 }
 
-@theme inline {
+/* Inline theme tokens */
+:root {
+  --font-heading: 'Geist Mono Black', monospace;
+  --font-subtext: 'Geist', sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  /* Custom design system for the jewelry brand */
+  --color-brown: #9E7967;           /* brand brown - hero, footer, best sellers */
+  --color-soft-green: #CCD5C4;      /* testimonial card background */
+  --color-off-white: #EDE3D9;       /* background behind collections */
+  --color-black: #000000;           /* base text color */
+  --color-white: #ffffff;           /* buttons, text, contrast */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  .wrapper {
+    padding-left: 140px;
+    padding-right: 140px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
