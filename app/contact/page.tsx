@@ -14,7 +14,7 @@ const ContactPage = () => {
           </h1>
 
           <p className="text-base max-w-md" style={{ fontFamily: "var(--font-subtext)" }}>
-            If you have any questions or want to <strong>get a free estimate</strong>, reach out to us via email or phone call. We're always happy to assist you!
+            If you have any questions or want to <strong>get a free estimate</strong>, reach out to us via email or phone call. We are always happy to assist you!
           </p>
 
           <ul className="space-y-5 text-base">

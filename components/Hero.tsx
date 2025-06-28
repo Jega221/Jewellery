@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Link from "next/link";          //  ← NEW
+import Link from "next/link";
+import Image from "next/image"; // ✅ Import Next.js Image
 import gsap from "gsap";
 
 const Hero = () => {
@@ -38,9 +39,8 @@ const Hero = () => {
             Everyday <br /> Classics
           </h1>
 
-          {/* CTA */}
           <Link
-            href="/shop"                                    /*  ← NEW  */
+            href="/shop"
             className="inline-block bg-[var(--color-white)] text-[var(--color-black)]
                        text-base sm:text-lg px-4 sm:px-6 py-2 sm:py-3 
                        rounded-md shadow hover:bg-opacity-90 transition"
@@ -52,26 +52,31 @@ const Hero = () => {
 
         {/* Main image + floating elements */}
         <div className="absolute bottom-0 md:left-1/2 md:-translate-x-1/2 md:w-[40%] w-full h-auto">
-          <img
+          <Image
             src="/assets/hero.png"
             alt="Jewelry Model"
+            width={600}
+            height={600}
             className="object-contain w-full h-full mx-auto"
+            priority
           />
 
-          {/* Rotating text — moved slightly left via translate-x */}
-          <img
+          <Image
             ref={rotateRef}
             src="/assets/round-text.svg"
             alt="Rotated Text"
-            className="absolute top-[42%] left-1/2 -translate-x-[67%]   /* ← tweaked */
-                       w-36 h-36 sm:w-40 sm:h-40 md:w-50 md:h-50"
+            width={160}
+            height={160}
+            className="absolute top-[42%] left-1/2 -translate-x-[67%]
+                       sm:w-40 sm:h-40 md:w-50 md:h-50"
           />
 
-          {/* Floating ring (desktop-only) */}
-          <img
+          <Image
             src="/assets/floating.png"
             alt="Floating Ring"
-            className="absolute bottom-10 right-[-16rem] w-20 h-20 animate-float hidden md:block"
+            width={80}
+            height={80}
+            className="absolute bottom-10 right-[-16rem] animate-float hidden md:block"
           />
         </div>
       </div>
