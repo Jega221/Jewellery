@@ -40,11 +40,11 @@ const Collections = () => {
             className="overflow-hidden transform-gpu z-10 hover:scale-105 transition-transform duration-500"
           >
             <Image
-              src={src}
-              alt={`Collection ${index + 1}`}
-              width={400}
-              height={400}
-              className="w-full h-[400px] object-cover rounded-xl"
+              src="/assets/collectionbg.png"
+              alt="Vector background"
+              fill
+              priority
+              className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
             />
           </div>
         ))}
@@ -52,17 +52,17 @@ const Collections = () => {
 
       {/* Desktop layout */}
       <div className="hidden lg:block relative z-10 w-full h-[710px]">
-        <CollectionImage src="/assets/collection1.png" width="325px" height="446px" top="top-[-70px]" left="left-[0px]" />
-        <CollectionImage src="/assets/collection2.png" width="229px" height="230px" top="top-[-130px]" left="left-[470px]" />
-        <CollectionImage src="/assets/collection3.png" width="246px" height="331px" top="top-[-40px]" right="right-[0px]" />
+        <CollectionImage src="/assets/collection1.png" width={325} height={446} top="top-[-70px]" left="left-[0px]" />
+        <CollectionImage src="/assets/collection2.png" width={229} height={230} top="top-[-130px]" left="left-[470px]" />
+        <CollectionImage src="/assets/collection3.png" width={246} height={331} top="top-[-40px]" right="right-[0px]" />
         <div className="absolute bottom-[1px] left-[20px] w-[174px] h-[301px] overflow-hidden transform-gpu z-10 hover:scale-105 transition-transform duration-500 origin-bottom">
-          <CollectionImage src="/assets/collection4.png" width="174px" height="301px" />
+          <CollectionImage src="/assets/collection4.png" width={174} height={301} />
         </div>
         <div className="absolute bottom-[30px] left-[470px] w-[229px] h-[231px] overflow-hidden transform-gpu z-10 hover:scale-105 transition-transform duration-500 origin-bottom">
-          <CollectionImage src="/assets/collection5.png" width="229px" height="231px" />
+          <CollectionImage src="/assets/collection5.png" width={229} height={231} />
         </div>
         <div className="absolute bottom-[100px] right-[0px] w-[246px] h-[192px] overflow-hidden transform-gpu z-10 hover:scale-105 transition-transform duration-500 origin-bottom">
-          <CollectionImage src="/assets/collection6.png" width="246px" height="192px" />
+          <CollectionImage src="/assets/collection6.png" width={246} height={192} />
         </div>
       </div>
     </section>
