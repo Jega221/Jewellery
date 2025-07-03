@@ -57,7 +57,7 @@ const Navbar = () => {
     className="text-xl sm:text-2xl font-bold"
     style={{ fontFamily: "var(--font-heading)" }}
   >
-    B&M 
+    Jewelry Store 
   </h1>
 
   {/* Nav links (desktop) */}

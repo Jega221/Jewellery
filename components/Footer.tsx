@@ -12,10 +12,10 @@ const Footer = () => (
           Contact
         </h4>
         <p style={{ fontFamily: "var(--font-subtext)" }}>
-          Ziya Rızkı Cd, Girne, <br />55/B, 40001
+          Ziya Rızkı Cd, Girne, <br />Ba5/08, 40001
         </p>
         <p style={{ fontFamily: "var(--font-subtext)" }}>
-          info@B&M.com <br />(+90) 533 854 05 55
+          info@JewelryStore.com <br />(+90) 548 852 71 43
         </p>
       </div>
 
@@ -57,7 +57,7 @@ const Footer = () => (
 
     {/* ── BOTTOM BAR ─────────────────────────────────────── */}
     <div className="border-t border-[var(--color-off-white)] pt-6 text-center text-sm" style={{ fontFamily: "var(--font-subtext)" }}>
-      © {new Date().getFullYear()} B&M. All rights reserved.
+      © {new Date().getFullYear()} Jewelry Store. All rights reserved.
     </div>
   </footer>
 );

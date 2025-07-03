@@ -5,7 +5,7 @@
  */
 const WhatsAppButton = () => (
   <a
-    href="https://wa.me/905338540555"          //  ← encode number *without* spaces
+    href="https://wa.me/905488527143"          //  ← encode number *without* spaces
     target="_blank"
     rel="noopener noreferrer"
     className="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg

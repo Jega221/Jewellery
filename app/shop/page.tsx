@@ -54,7 +54,7 @@ const jewelryItems = [
   },
 ];
 
-const whatsappNumber = "905338540555";
+const whatsappNumber = "905488527143";
 
 const ShopPage = () => {
   return (
